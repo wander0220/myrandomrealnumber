@@ -10,20 +10,34 @@ namespace myrandomrealnumber
     {
         static void Main(string[] args)
         {
-            
+            Random random = new Random();
+            int num = random.Next(0, 1000);
 
-            for(int i = 0; i < 5; i++)
+            //Console.WriteLine(num);
+
+            while (true)
             {
-                Random random = new Random();
-                int num = random.Next(0, 100);
+                Console.Write("숫자를 입력해주세요(0~1000) : ");
+                string input = Console.ReadLine();
+                int num02 = Convert.ToInt32(input);
 
-                Console.WriteLine(num);
+                if (num > num02)
+                {
+                    Console.WriteLine(num02 + "보다 큰 숫자입니다");
+                }
+                else if (num < num02)
+                {
+                    Console.WriteLine(num02 + "보다 작은 숫자입니다");
+                }
+                else
+                {
+                    Console.WriteLine("정답입니다!");
+                    break;
+                }
+
+                Console.WriteLine();
+
             }
-            
-            //while (true)
-            //{
-
-            //}
         }
     }
 }
